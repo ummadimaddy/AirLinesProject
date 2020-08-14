@@ -1,0 +1,133 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+table {
+    width: 100%;
+}
+
+.cdk-overlay-pane {
+    width: 70% !important;
+}
+
+.container {
+    width: 70%;
+}
+
+.container-full {
+    width: 100%;
+    height: auto;
+    display: block;
+    float: left;
+}
+
+.container-full div.col-span-1 {
+
+    width: 8.33%;
+    float: left;
+    
+}.container-full div.col-span-2 {
+    width: 16.66%;
+    float: left;
+    
+}
+.container-full div.col-span-3 {
+    width: 24.99%;
+    float: left;
+    
+}
+.container-full div.col-span-4 {
+    width: 33.32%;
+    float: left;
+    
+}
+.container-full div.col-span-5 {
+    width: 41.65%;
+    float: left;
+}
+.container-full div.col-span-6 {
+    width: 49.98%;
+    float: left;
+}
+.container-full div.col-span-7 {
+    width: 58.31%;
+    float: left;
+    
+}
+.container-full div.col-span-8 {
+    width: 66.64%;
+    float: left;
+    
+}
+.container-full div.col-span-9 {
+    width: 74.97%;
+    float: left;
+    
+}
+.container-full div.col-span-10 {
+    width: 83.30%;
+    float: left;
+    
+}
+.container-full div.col-span-11 {
+    width: 91.63%;
+    float: left;
+    
+}
+.container-full div.col-span-12 {
+    width: 100%;
+    float: left;
+    
+}
+
+.container-full label, mat-label {
+    display: block;
+}
+
+mat-form-field {
+    width: 90% !important;
+    margin-left: 5%;
+}
+
+.button-full {
+    width: 100% !important;
+}
+// mat-select {
+//     width: 100% !important;
+// }
+
+// .airline-input input{
+//     width: 90% !important;
+//     margin-left: 5%;
+// }
+
+.example-card {
+    max-width: 400px;
+}
+.example-header-image {
+    background-image: url('https://www.trzcacak.rs/myfile/detail/3-39618_login-icon-with-transparent-background.png');
+    background-size: cover;
+}
+
+mat-card {
+    margin: auto;
+}
+ul {
+        padding: 0;
+        margin: 0;
+}
+li {
+        list-style: none;
+}
+ul li {
+        padding: 15px 13px;
+        display: inline-block;
+        color: #fff;
+        cursor: pointer;
+} 
+
+.horizontal{
+    display:inline;
+    padding-right: 15px;
+}

@@ -1,0 +1,15 @@
+<h2>Select the Seats from the following layout</h2>
+<div class="container-full">
+    <div class="col-span-1" *ngFor="let seat of seats; let i = index">
+        <img *ngIf="!isValid[i]" [ngStyle]=" {'background-color':colourSeat===seat  ? 'green' : 'grey'}" src="../../../../assets/img/bseat.png"
+             (click)="slectedSeat(seat)">
+        <img *ngIf="isValid[i]" [ngStyle]=" {'background-color': 'red' }" src="../../../../assets/img/bseat.png">
+    </div>
+    <button mat-raised-button color="primary" (click)="confirmSeat(seat)">Confirm</button>
+</div>
+<div>
+        <img  [ngStyle]=" {'background-color': 'red' }" src="../../../../assets/img/bseat.png"><label>Booked</label>
+        <img  [ngStyle]=" {'background-color': 'green' }" src="../../../../assets/img/bseat.png"><label>Selected</label>
+        <img   src="../../../../assets/img/bseat.png"><label>UnBooked</label>
+
+</div>

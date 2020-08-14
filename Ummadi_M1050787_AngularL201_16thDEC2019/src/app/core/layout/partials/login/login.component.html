@@ -1,0 +1,27 @@
+<mat-card  margin="auto" class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>LogIn</mat-card-title>
+    </mat-card-header>
+    <form #myForm="ngForm" [formGroup]="loginform" (ngSubmit)="onsubmit()">
+        <div>
+            <mat-form-field>
+                <input matInput type="email" placeholder="Email*" formControlName="email" />
+                <mat-error>Please enter a valid email</mat-error>
+            </mat-form-field>
+            <br />
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password*" formControlName="password" />
+                <mat-error>Please enter a valid password</mat-error>
+            </mat-form-field>
+            <br />
+            <button class="button-full" mat-flat-button color="primary" type="submit" [disabled]="!loginform.valid">
+                Login
+            </button>
+            <button class="button-full" mat-flat-button color="warn" type="button" (click)="clear()">
+                Clear
+            </button>
+        </div>
+    </form>
+    
+</mat-card>

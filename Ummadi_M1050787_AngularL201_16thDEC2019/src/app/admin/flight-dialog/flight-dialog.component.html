@@ -1,0 +1,44 @@
+<section class="container-full">
+    <h2 class="title">Update the Flight Details</h2>
+    <form #myForm="ngForm" [formGroup]="UpdateFlightDetails">
+        <div class="col-span-4">
+            <mat-form-field class="airline-input">
+                <input matInput type="passengerName" placeholder="Flight Number*" formControlName="flightnumber"
+                    required />
+                <mat-error>Please enter a valid Flight Number</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-span-4">
+            <mat-form-field class="airline-input">
+                <input matInput type="passengerName" placeholder="Flight Name*" formControlName="flightname"
+                    required />
+                <mat-error>Please enter a valid Flight Name</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-span-4">
+            <mat-form-field>
+                <mat-label>Ancillery Services</mat-label>
+                <mat-select multiple formControlName="ancillaryservices">
+                    <mat-option *ngFor="let service of services" [value]="service">{{service}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-span-4">
+            <mat-label>Special Meals</mat-label>
+            <mat-button-toggle-group formControlName="specialMeals" name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                <mat-button-toggle value="no">No</mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+    </form>
+</section>
+
+<section class="container-full">
+    <div class="col-span-6">
+        <button mat-flat-button class="button-full" color="primary" type="button" (click)="onupdate()"
+            [disabled]="!UpdateFlightDetails.valid">Update</button>
+    </div>
+    <div class="col-span-6">
+        <button mat-flat-button class="button-full" color="warn" type="button" (click)="clear()">Clear</button>
+    </div>
+</section>

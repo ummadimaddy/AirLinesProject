@@ -1,0 +1,4 @@
+<div *ngFor = "let seat of seats">
+        <img id = "booked" *ngIf = "bookedSeats.indexOf(seat) !== -1">
+        <img id = "notBooked" *ngIf = "bookedSeats.indexOf(seat) === -1">
+</div>

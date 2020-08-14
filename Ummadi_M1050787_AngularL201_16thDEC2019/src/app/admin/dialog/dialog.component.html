@@ -1,0 +1,91 @@
+<section class="container-full">
+  <h2 class="title">{{title}}</h2>
+  <form #myForm="ngForm" [formGroup]="CreatePassenger">
+    <div class="col-span-4">
+      <mat-form-field class="airline-input">
+        <input matInput type="passengerName" placeholder="Passenger Name" formControlName="passengerName" required />
+        <mat-error>Please enter a valid Passenger Name</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-span-4">
+      <mat-form-field>
+        <input matInput type="seatNumber" placeholder="Seat Number" formControlName="seatNumber" />
+        <mat-error>Please enter a valid Seat Number</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-span-4">
+      <mat-form-field>
+        <mat-label>Flight Number</mat-label>
+        <mat-select formControlName="flightnumber" required (ngModelChange)='selectedFlight($event)'>
+          <mat-option *ngFor="let flightNumber of flightNumbers" [value]="flightNumber">{{flightNumber}}</mat-option>
+        </mat-select>
+        <mat-error>Please Choose a valid Flight Number</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-span-4">
+      <mat-form-field>
+        <mat-label>Ancillery Services</mat-label>
+        <mat-select multiple formControlName="passengerAncillaryServices" required>
+          <mat-option *ngFor="let service of services" [value]="service">{{service}}</mat-option>
+        </mat-select>
+        <mat-error>Please Choose a valid Ancillery Services</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-span-4">
+      <mat-form-field>
+        <input matInput type="passportNumber" placeholder="Passport Number" formControlName="passportNumber"
+          required />
+        <mat-error>Please enter a valid Passport Number</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-span-4">
+      <mat-form-field>
+        <input matInput type="address" placeholder="Address" formControlName="address" required />
+        <mat-error>Please enter a valid Address</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-span-4">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker1" placeholder="Enter Date of Birth" formControlName="dob" required>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <mat-error>Please enter a valid Date of Birth</mat-error>
+      </mat-form-field>
+
+    </div>
+    <div class="col-span-4">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Enter Date of Journey" formControlName="doj" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-span-4">
+      <mat-label>Wheel Chair</mat-label>
+      <mat-button-toggle-group formControlName="wheelChair" required name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="yes">Yes</mat-button-toggle>
+        <mat-button-toggle value="no">No</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <div class="col-span-4"></div>
+    <div class="col-span-4">
+      <mat-label>Passenger with Infants</mat-label>
+      <mat-button-toggle-group formControlName="withInfants" required name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="yes">Yes</mat-button-toggle>
+        <mat-button-toggle value="no">No</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </form>
+</section>
+<form>
+</form>
+<section class="container-full">
+  <div class="col-span-6">
+    <button mat-flat-button class="button-full" color="primary" type="button" (click)="onsubmit()"
+      [disabled]="!CreatePassenger.valid">Submit</button>
+  </div>
+  <div class="col-span-6">
+    <button mat-flat-button class="button-full" color="warn" type="button" (click)="clear()">Clear</button>
+  </div>
+</section>
+

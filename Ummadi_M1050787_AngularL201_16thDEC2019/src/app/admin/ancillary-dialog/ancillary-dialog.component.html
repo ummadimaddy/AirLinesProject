@@ -1,0 +1,17 @@
+<section class="container-full">
+    <h2 class="title">{{title}}</h2>
+    <form [formGroup]="CreateServices">
+
+        <div class="col-span-4">
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Enter the service to be added" formControlName="addedService">
+            </mat-form-field>
+        </div>
+
+        <div class="col-span-6">
+            <button mat-flat-button class="button-full" color="primary" type="button"
+                (click)="onsubmitServices()">Submit</button>
+        </div>
+    </form>
+</section>

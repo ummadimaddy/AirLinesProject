@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span style="float: left;">MyAirLines</span>
+        <div style="margin-left: 90%;">
+            <button *ngIf="!isLoggedin" mat-button routerLink = "login">Login</button>
+            <button *ngIf="isLoggedin" mat-button routerLink = "/" (click) = "logout()">LogOut</button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,99 @@
+<mat-tab-group>
+    <mat-tab label="Mange Passengers">
+            <mat-form-field>
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                  </mat-form-field>
+        <button mat-raised-button color="primary" class="button-full" (click)="onAddPassenger()">
+            <mat-icon>add</mat-icon>Add Passenger
+        </button>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="passengerName">
+                <th mat-header-cell *matHeaderCellDef> Passenger Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.passengerName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="passportNumber">
+                <th mat-header-cell *matHeaderCellDef>Passport Number</th>
+                <td mat-cell *matCellDef="let element"> {{element.passportNumber}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="address">
+                <th mat-header-cell *matHeaderCellDef>Address</th>
+                <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="flightnumber">
+                <th mat-header-cell *matHeaderCellDef> Flight Number</th>
+                <td mat-cell *matCellDef="let element"> {{element.flightnumber}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td mat-cell *matCellDef="let element"><button mat-raised-button color="accent"
+                        (click)="updatePassengers(element)">Edit</button></td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+        </table>
+    </mat-tab>
+    <mat-tab label="Manage Ancillary Services ">
+        <button mat-raised-button color="primary" (click)="onAddServices()">
+            <mat-icon>add</mat-icon>Add Services
+        </button>
+        <table mat-table [dataSource]="services" class="mat-elevation-z8">
+            <ng-container matColumnDef="addedService">
+                <th mat-header-cell *matHeaderCellDef> Ancillary Services</th>
+                <td mat-cell *matCellDef="let element"> {{element.addedService}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td mat-cell *matCellDef="let element"><button mat-raised-button color="accent"
+                        (click)="updateAncillaryServices(element)">Edit</button><button mat-raised-button color="warn"
+                        (click)="deleteAncillaryServices(element)">Delete</button></td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-tab>
+
+
+    <!-----------------------------------Manage the Flights ----------------------------------->
+    <mat-tab label="Manage Flights">
+
+        <table mat-table [dataSource]="allFlightDetails" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="flightnumber">
+                <th mat-header-cell *matHeaderCellDef>Flight Number</th>
+                <td mat-cell *matCellDef="let element"> {{element.flightnumber}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="flightname">
+                <th mat-header-cell *matHeaderCellDef>Fligth Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.flightname}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ancillaryservices">
+                <th mat-header-cell *matHeaderCellDef>Ancillary Services</th>
+                <td mat-cell *matCellDef="let element"> {{element.ancillaryservices}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="specialMeals">
+                <th mat-header-cell *matHeaderCellDef> Special Meals</th>
+                <td mat-cell *matCellDef="let element"> {{element.specialMeals}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td mat-cell *matCellDef="let element"><button mat-raised-button color="accent"
+                        (click)="updateFlightDetalls(element)">Edit</button></td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayesColumns3"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayesColumns3;"></tr>
+        </table>
+    </mat-tab>
+</mat-tab-group>
